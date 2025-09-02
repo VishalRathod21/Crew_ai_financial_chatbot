@@ -1,0 +1,124 @@
+You are an expert CrewAI Developer and Python Backend Engineer.
+Your task is to create a complete Python project for the CrowdWisdomTrading AI Agent Internship Assessment.
+
+📌 Project Requirements
+Overview
+
+Build a CrewAI-based backend script that generates a daily financial markets summary after US market close (01:30 IST, previous day close).
+
+Technical Stack
+
+Language → Python 3.10+
+
+Framework → CrewAI (latest version)
+
+LLM Provider → litellm (any free model, e.g., OpenAI, Groq, Gemini)
+
+Tools → Tavily API / Serper API for search, Groq API for optional summarization, Telegram Bot API for sending reports
+
+📌 Agents & Flow
+
+You must design CrewAI agents as employees. Each agent has one responsibility only:
+
+Search Agent
+
+Use Tavily/Serper API to fetch US financial news from last 1 hour.
+
+Optionally query Groq API for additional summary.
+
+Pass results forward.
+
+Summary Agent
+
+Create a short summary (< 500 words) of key financial market updates (trading activity, news, events).
+
+Ensure clarity and relevance.
+
+Formatting Agent
+
+Find 2 related charts or images from context (search results).
+
+Insert them into the summary at logical places.
+
+Translating Agent
+
+Translate final summary into Hindi, Arabic, Hebrew.
+
+Maintain formatting (including images).
+
+Send Agent
+
+Send final outputs to a Telegram channel via Telegram Bot API.
+
+Also save PDF version with multi-language summaries + charts locally.
+
+📌 Deliverables
+
+Python Script with CrewAI pipeline (agents + flow).
+
+Config file (.env) for storing API keys (Tavily/Serper, Groq, Telegram, etc.).
+
+PDF Output Example containing:
+
+Summary with images
+
+Translations (Hindi, Arabic, Hebrew)
+
+Logging + Error Handling (must handle API failures gracefully).
+
+README.md with:
+
+Setup instructions
+
+How to run
+
+Required API keys
+
+📌 Extra Points
+
+Add RAG support: fetch both X (Twitter) + YouTube news snippets for more robust reports.
+
+Use structured logging (e.g., Python logging library).
+
+📌 File Structure
+crowdwisdom_ai_agent/
+│── main.py                 # Entry point for CrewAI flow
+│── agents/
+│    ├── search_agent.py
+│    ├── summary_agent.py
+│    ├── formatting_agent.py
+│    ├── translating_agent.py
+│    ├── send_agent.py
+│── utils/
+│    ├── pdf_generator.py   # For creating PDFs with charts + text
+│    ├── logger.py          # Logging setup
+│── requirements.txt
+│── .env.example            # Example API keys
+│── README.md
+│── output/
+│    ├── report_example.pdf
+
+📌 What You Should Generate
+
+Complete Python code with CrewAI agents and flow.
+
+requirements.txt including:
+
+crewai
+litellm
+python-telegram-bot
+requests
+reportlab
+pillow
+tavily-python
+serper
+
+
+README.md with instructions.
+
+Example run command:
+
+python main.py
+
+
+⚡ Now generate the full implementation with clean, modular, documented Python code, along with requirements.txt, README.md, and an example PDF output file (multi-language).
