@@ -1,16 +1,24 @@
 [project]
-name = "repl-nix-workspace"
+name = "crewaiagent"
 version = "0.1.0"
 description = "Add your description here"
-requires-python = ">=3.11"
+readme = "README.md"
+requires-python = ">=3.10"
 dependencies = [
+    "beautifulsoup4>=4.13.5",
     "crewai>=0.175.0",
-    "google-search-results>=2.4.2",
+    "fpdf>=1.7.2",
+    "google-generativeai>=0.3.2",
+    "googletrans>=4.0.2",
+    "langchain>=0.3.27",
     "litellm>=1.74.9",
+    "matplotlib>=3.7.0",
+    "newspaper3k>=0.2.8",
+    "pandas>=2.0.0",
     "pillow>=11.3.0",
     "python-dotenv>=1.1.1",
     "python-telegram-bot>=22.3",
-    "reportlab>=4.4.3",
     "requests>=2.32.5",
+    "seaborn>=0.12.2",
     "tavily-python>=0.7.11",
 ]
